@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
     <div class="container">
         {% comment %} fix index.html later {% endcomment %}
-      <a class="navbar-brand" href="{% url 'index' %}>"
+      <a class="navbar-brand" href={% url 'index' %}>
             <img src={% static "img/logo.png" %} class="logo" alt="" />
       </a>
       <button
@@ -15,7 +15,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav">
-          <li {% if '/' == request.path %} class="nav-item active mr-3" git{% else %}
+          <li {% if '/' == request.path %} class="nav-item active mr-3" {% else %}
             class="nav-item mr-3" {% endif %} >
             {% comment %} fix index.html later {% endcomment %}
             <a class="nav-link" href= {% url "index" %}>Home</a>
@@ -23,11 +23,12 @@
           <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %}
           class="nav-item mr-3" {% endif %}>
             {% comment %} fix about.html {% endcomment %}
-            <a class="nav-link" href={% url "about" %}>About</a>
+            <a class="nav-link" href={% url 'about' %}>about</a>
           </li>
-          <li class="nav-item mr-3">
-            {% comment %} fix listings.html {% endcomment %}
-            <a class="nav-link" href="listings.html">Featured Listings</a>
+          <li {% if 'listings' in request.path %} class="nav-item active mr-3" {% else %}
+          class="nav-item mr-3" {% endif %}>
+            {% comment %} fix about.html {% endcomment %}
+            <a class="nav-link" href={% url 'listings' %}>Featured Listings</a>
           </li>
         </ul>
 
@@ -42,7 +43,6 @@
             {% comment %} fix login.html {% endcomment %}
             <a class="nav-link" href="login.html">
               <i class="fas fa-sign-in-alt"></i>
-
               Login</a
             >
           </li>
