@@ -1,13 +1,13 @@
 {% extends 'partials/base.html' %}{% load humanize %}
 {% block content %}
     <!-- Showcase -->
-    <section id="showcase-inner" class="py-5 text-white">
+    <section id="showcase-inner" class="py-2 text-white">
         <div class="container">
           <div class="row text-center">
-            <div class="col-md-12">
-              <h1 class="display-4">Browse Our Properties</h1>
+            <div class="col-md-7">
+              <h1 class="display-2">Rent or buy houses</h1>
               <p class="lead">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt,
+                United Kingdom Leeds, amet consectetur adipisicing elit. Sunt,
                 pariatur!
               </p>
             </div>
@@ -16,28 +16,28 @@
       </section>
   
       <!-- Breadcrumb -->
-      <section id="bc" class="mt-3">
+      <section id="bc" class="mt-2">
         <div class="container">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
                 <!-- correct -->
-                <a href={% url 'index'%}> <i class="fas fa-home"></i> Home</a>
+                <a href={% url "index" %}> <i class="fas fa-home"></i> At Home</a>
               </li>
-              <li class="breadcrumb-item active">Browse Listings</li>
+              <li class="breadcrumb-item active">Find Listings</li>
             </ol>
           </nav>
         </div>
       </section>
   
       <!-- Listings -->
-      <section id="listings" class="py-4">
+      <section id="listings" class="py-2">
         <div class="container">
           <div class="row">
             <!-- Listing 1 -->
             {% if listings %}
             {% for listing in listings %}
-            <div class="col-md-6 col-lg-4 mb-4">
+            <div class="col-md-6 col-lg-8 mb-4">
               <div class="card listing-preview">
                 <!-- correct -->
                 <img
@@ -48,7 +48,7 @@
                 <div class="card-img-overlay">
                   <h2>
                     <span class="badge badge-secondary text-white"
-                      >${{ listing.price | intcomma}}</span
+                      >${{ listing.price | intcomma }}</span
                     >
                   </h2>
                 </div>
@@ -62,7 +62,7 @@
                   <hr />
                   <div class="row py-2 text-secondary">
                     <div class="col-6">
-                      <i class="fas fa-th-large"></i> Sqft:{{ listing.sqft  | intcomma}}
+                      <i class="fas fa-th-large"></i> Sqft:{{ listing.sqft  | intcomma }}
                     </div>
                     <div class="col-6">
                       <i class="fas fa-dumbbell"></i> ClubHouse:{{ listing.clubhouse }}

@@ -1,16 +1,16 @@
 {% extends "partials/base.html" %} {% block content %}
 {% load static %}
 
-<section id="showcase-inner" class="py-5 text-white">
+<section id="showcase-inner" class="py-5 text-black">
   <div class="container">
     <div class="row text-center">
    
-      <div class="col-md-12">
-        <p>No Realtor Available</p>
+      <div class="col-md-10">
+        <p>Sorry.No Realtor Available today</p>
       </div>
       
 
-        <h1 class="display-4">About BC Real Estate</h1>
+        <h1 class="display-1">About ABC Real Central Estate</h1>
         <p class="lead">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt,
           pariatur!
@@ -21,14 +21,14 @@
 </section>
 
 <!-- Breadcrumb -->
-<section id="bc" class="mt-3">
+<section id="bc" class="mt-4">
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href={% url "index" %}> <i class="fas fa-home"></i> Home</a>
+          <a href={% url "index" %}> <i class="fas fa-home"></i> Homeless</a>
         </li>
-        <li class="breadcrumb-item active">About</li>
+        <li class="breadcrumb-item active">About on</li>
       </ol>
     </nav>
   </div>
@@ -37,15 +37,15 @@
 <section id="about" class="py-4">
   <div class="container">
     <div class="row">
-      <div class="col-md-8">
-        <h2>We Search For The Perfect Home</h2>
+      <div class="col-md-7">
+        <h2>Perfect Home is in Europe</h2>
         <p class="lead">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt,
+          German Hitler ipsum dolor sit,  Italy Mussolin consectetur adipisicing elit. Sunt,
           pariatur!
         </p>
         <img src={% static "img/about.jpg" %} alt="" />
-        <p class="mt-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        <p class="mt-2">
+          Mark ipsum dolor sit amet consectetur adipisicing elit.
           Perspiciatis esse officia repudiandae ad saepe ex, amet neque quod
           accusamus rem quia magnam magni dolorum facilis ullam minima
           perferendis? Exercitationem at quaerat commodi id libero eveniet
@@ -54,7 +54,7 @@
       </div>
       {% comment %} modify mvp {% endcomment %}
       {% if mvp_realtors %}
-      <div class="col-md-4">
+      <div class="col-md-3">
         {% for realtor in mvp_realtors %}
         <div class="card">
           <img
@@ -63,10 +63,10 @@
             alt="Seller of the month"
           />
           <div class="card-body">
-            <h5 class="card-title">Seller Of The Month</h5>
+            <h5 class="card-title">2024 Seller Of The Month</h5>
             <h6 class="text-secondary">{{realtor.name}}</h6>
             <p class="card-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+              2024 Handsome Mark Lorem tipsum dolor sit amet consectetur adipisicing elit. Omnis
               nesciunt amet, illo itaque similique repellat. content.
             </p>
           </div>
@@ -80,41 +80,41 @@
 
 <!-- Work -->
 <section id="work" class="bg-dark text-white text-center">
-  <h2 class="display-4">We Work For You</h2>
+  <h2 class="display-1">2025 Hong Kong Top realtor We serve For You</h2>
   <h4>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem velit
+    Sahara Desert ipsum dolor sit amet consectetur adipisicing elit. Autem velit
     aperiam, unde aliquid at similique!
   </h4>
-  <hr />
-  <a href={% url "listings" %}class="btn btn-secondary text-white btn-lg"
-    >View Our Featured Listings</a
+  <h2/>
+  <a href={% url "listings" %} class="btn btn-secondary text-white btn-lg"
+    > View our featured  Listings</a
   >
 </section>
 
 <!-- Team -->
-<section id="team" class="py-5">
+<section id="team" class="py-2">
   <div class="container">
-    <h2 class="text-center">Our Team</h2>
+    <h2 class="text-center">Fighting Teams</h2>
     <div class="row text-center">
       {% if realtors %}
       {% for realtor in realtors %}
-      <div class="col-md-4">
+      <div class="col-md-2">
         <img
           src={{ realtor.photo.url }}
           alt=""
-          class="rounded-circle mb-3"
+          class="rounded-circle mb-5"
         />
         <h4>{{ realtor.name }}</h4>
         <p class="text-success">
           <i class="fas fa-award text-success mb-3"></i> Realtor
         </p>
         <hr />
-        <p><i class="fas fa-phone"></i> {{ realtor.phone }} </p>
-        <p><i class="fas fa-envelope-open"></i>{{ realtor.email }}</p>
+        <p><i class="fas fa-phone"></i> {{realtor.phone}} </p>
+        <p><i class="fas fa-envelope-open"></i>{{realtor.email }}</p>
       </div>
       {% endfor %}
       {% else %}
-      <div class="col-md-4">
+      <div class="col-md-6">
         <p>No Realtor Available.</p>
       </div>            
       {% endif %}
