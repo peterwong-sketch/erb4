@@ -149,8 +149,4 @@ INTERNAL_IPS = [
 MESSAGE_TAGS = {
     messages.SUCCESS: 'success',
     messages.ERROR: 'danger',
-
-
-
-
 }

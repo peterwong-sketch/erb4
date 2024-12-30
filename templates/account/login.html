@@ -1,22 +1,4 @@
 {% extends 'base.html' %}
-
-    def register(request):
-        if request.method == 'POST":
-            print('submit')
-            return redirect('register')
-        else:
-            return render(request, 'accounts/register.html')
-        
-    def login(request):
-        if request.method == 'POST'
-            print('login')
-            return redirect('login')
-        else: 
-            return render(request, 'accounts/login.html')
-
-    def logout(request):
-        return redirect("index")
-
     <section id="login" class="bg-light py-5">
       <div class="container">
         <div class="row">
@@ -27,6 +9,21 @@
               </div>
               <div class="card-body">
                 {% comment %}{% include 'partials?_alert.html'%}{% endcomment %}
+
+def login(request):
+if request.method == 'POST":
+    user = request.POST['username']'
+    password = request.POST['password']
+    user = auth.authenticate(user=username, password=password)
+    if user is not None:
+      auth.login(request,user)
+      messages.success(request, 'You are now logged in')
+      return redirect{'dashboard'}
+  else:
+    messages.error(request, 'Invalid credentials')
+    return redirect('login')
+  else:
+    return render(request, 'accounts/login.html')
 
                 <form action="index.html">
                   <div class="form-group">
@@ -64,5 +61,4 @@
 
  
 
-{% block content %}
-{% end %}
+{% endblock content %}
