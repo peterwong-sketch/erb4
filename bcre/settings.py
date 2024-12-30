@@ -10,8 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-from pathlib import Path
+from pathlib import Path 
 import os
+from django.contrib.messages import constants as messages
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -90,7 +91,7 @@ DATABASES = {
         'USER': 'postgres',
         "PASSWORD": '1234',
         "HOST": 'localhost'
-   }
+    }
 
 }
 
@@ -144,3 +145,12 @@ MEDIA_URL = '/media/'
 INTERNAL_IPS = [
     "127.0.0.1"
 ]
+
+MESSAGE_TAGS = {
+    messages.SUCCESS: 'success',
+    messages.ERROR: 'danger',
+
+
+
+
+}
